@@ -1,0 +1,40 @@
+﻿@model List<FlowerShop.Models.Bouquet>
+@{
+    ViewBag.Title = "WeddingBouquets";
+}
+
+<h2>WeddingBouquets</h2>
+
+<div class="firstphotos">
+
+    
+            
+        @if (Model != null && Model.Any())
+        {
+            foreach (var item in Model)
+            {
+
+                <div class="first">
+                    <h3>
+
+                        <img src="data:image;base64,@System.Convert.ToBase64String(item.BouquetImage)" />
+                        @item.BouquetName
+                        <button>
+                            @Html.ActionLink("Order", "BouquetDetails", "Home", item, null)
+                        </button>
+
+                    </h3>
+
+                </div>
+            }
+        }
+
+
+              
+
+
+
+
+ </div>
+
+

@@ -1,0 +1,29 @@
+﻿@model IEnumerable<FlowerShop.Models.Customer>
+@{
+    ViewBag.Title = "CustomerList";
+}
+
+<!DOCTYPE html>
+
+    <title>CustomerList</title>
+
+
+@*//button for bouqet and flower orders*@
+
+<table>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(item.CustomerName, "CustomerOrderDetails", "Storage", new { Name = item.CustomerName }, null)
+            </td>
+            <td>
+                @item.DeliveryDate
+            </td>
+
+        </tr>
+
+
+    }
+
+</table>

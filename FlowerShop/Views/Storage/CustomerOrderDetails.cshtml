@@ -1,0 +1,39 @@
+﻿@model FlowerShop.Models.ViewModel.CustomerView
+@{
+    ViewBag.title = "CustomerOrderDetails";
+}
+
+
+    <title>CustomerOrderDetails</title>
+
+    @Model.CustomerName
+    @Html.DisplayFor(m => m.Telephone)
+    @Html.DisplayFor(m => m.Email)
+    @Html.DisplayFor(m => m.Address)
+
+<table>
+
+    @foreach (var item in Model.OrderBouquet)
+    {
+        <tr>
+            <td>Bouquet Order</td>
+            <td>@item.Bouquet.BouquetName</td>
+            <td>Flowers</td>
+            <td>@item.FlowerForBouquet</td>
+
+        </tr>
+    }
+
+    @foreach (var item in Model.OrderFlower)
+    { 
+        <tr>
+            <td>Flowers Order</td>
+            <td>@item.Flower.Name</td>
+            <td>item.Pieces</td>
+        </tr>
+
+    }
+   
+   
+</table> 
+ 

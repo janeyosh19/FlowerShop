@@ -1,0 +1,26 @@
+﻿@model FlowerShop.Models.Bouquet
+@{
+    ViewBag.Title = "StoreBouquet";
+}
+
+<h2>StoreBouquet</h2>
+
+<div>
+    @using (Html.BeginForm("StoreBouquet", "Storage", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+
+        <p>Bouquet Name:</p>
+        @Html.TextBoxFor(m => m.BouquetName)
+        <p>Image Upload</p>
+        <input type="file" value="image" name="file" />
+        <p>Description:</p>
+        @Html.TextBoxFor(m => m.Description)
+        <p>Price</p>
+        @Html.TextBoxFor(m => m.BouquetPrice, new { @type = "number" })
+
+        <input type="submit" value="Submit" />
+
+    }
+
+</div>
+

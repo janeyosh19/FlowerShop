@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Anastasia's Blooming Garden</title>
+    @Styles.Render("~/Content/Flowers.css")
+    @Styles.Render("~/Content/Home.css")
+    @Styles.Render("~/Content/Table.css")
+    @*@Styles.Render("~/Content/Wedding.css")*@
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="container">
+        <div class="forheader">
+            <div class="navbar">
+                <ul>
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Wedding Bouquets", "WeddingBouquets", "Home")</li>
+                    <li>@Html.ActionLink("SingleFlower", "SingleFlower", "Home")
+                    <li>
+                        <div class="dropdown">
+                            Admin
+                            <div class="content">
+                            @Html.ActionLink("Store Bouquet", "StoreBouquet", "Storage")
+                            @Html.ActionLink("Store Flower", "StoreFlower", "Storage")
+                            @Html.ActionLink("Customer Order", "CustomerList", "Storage")
+                            </div>
+                        </div>
+                    </li>
+               </ul>
+            </div>
+        </div>
+    </div>
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Anastasia's Blooming Garden</p>
+            </footer>
+        </div>
+        @Scripts.Render("~/Scripts/Calculate.js");
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+</body>
+</html>

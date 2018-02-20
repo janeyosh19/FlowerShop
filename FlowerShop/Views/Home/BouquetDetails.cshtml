@@ -1,0 +1,43 @@
+﻿@model FlowerShop.Models.BouquetView
+
+    @{
+        ViewBag.Title = "BouquetDetails";
+    }
+
+<div>
+    <h2>@Model.BouquetName</h2>
+    <h2>Description:</h2>
+    <p>@Model.Description</p>
+    <h2>Price:</h2>
+    <p>@Model.BouquetPrice per piece</p>
+</div>
+
+
+<div>
+    @using (Html.BeginForm("StoreBouquetOrder", "Storage"))
+    {
+                @Html.HiddenFor(m => m.BouquetName)
+                <p> Name </p>
+                @Html.TextBoxFor(m => m.CustomerName)
+                <p> Telephone </p>
+                @Html.TextBoxFor(m => m.Telephone, new { @type = "number" }) @*/equivalent to the input type*@
+                <p>Email</p>
+                @Html.TextBoxFor(m => m.Email)
+                <p>Address</p>
+                @Html.TextBoxFor(m => m.Address)
+                <p>Date to be delivered</p>
+                @Html.TextBoxFor(m => m.DeliveryDate, new { @type = "datetime-local" })
+                <p>Chosen flower for the Bouquet</p>
+                @Html.TextBoxFor(m => m.FlowerForBouquet)
+
+
+
+
+                <input type="Submit" name="Order" />
+    }
+
+
+</div>
+
+    
+

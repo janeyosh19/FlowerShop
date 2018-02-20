@@ -1,0 +1,38 @@
+﻿@model List<FlowerShop.Models.Flower>
+@{
+    ViewBag.Title = "SingleFlower";
+}
+
+<h1>Flowers for your home</h1>
+
+<div class="firstphotos">
+
+    @foreach (var item in Model)
+    {
+
+
+        <div class="first">
+
+            <h3>
+
+                <img src="data:image;base64,@System.Convert.ToBase64String(item.Image)" />
+                @item.Price
+                @item.Name
+            </h3>
+            @Html.ActionLink("Add", "AddFlower", "Home", new { Name = item.Name, Price = item.Price }, null)
+            
+        </div>
+
+    }
+
+    @Html.ActionLink("Go to Shopping Cart", "ShoppingCart", "Home")
+</div>
+
+
+
+
+
+
+
+
+

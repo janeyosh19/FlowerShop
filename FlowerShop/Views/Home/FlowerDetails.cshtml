@@ -1,0 +1,26 @@
+﻿@model FlowerShop.Models.FlowerView
+@{
+    ViewBag.Title = "FlowerDetails";
+}
+
+@using (Html.BeginForm("StoreFlowerOrder", "Storage"))
+{                
+
+                @Html.HiddenFor(m => m.Name)
+                @Html.HiddenFor(m => m.Price)
+                @Html.HiddenFor(m =>m.Pieces)
+                <p> Name </p>
+                @Html.TextBoxFor(m => m.CustomerName)
+                <p> Telephone </p>
+                @Html.TextBoxFor(m => m.Telephone, new { @type = "number" }) @*/equivalent to the input type*@
+                <p>Email</p>
+                @Html.TextBoxFor(m => m.Email)
+                <p>Address</p>
+                @Html.TextBoxFor(m => m.Address)
+                <p>Date to be delivered</p>
+                @Html.TextBoxFor(m => m.DeliveryDate, new { @type = "datetime-local" })
+
+                <input type="Submit" name="Order" />
+}
+
+

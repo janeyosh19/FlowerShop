@@ -1,0 +1,115 @@
+﻿body {
+
+
+}
+
+
+.firstphotos {
+    margin-top: 20px;
+    padding: 10px;
+    min-height: 350px;
+    max-width: 100%;
+}
+
+    .firstphotos h3 {
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 25px;
+        color: rgb(124, 93, 40);
+    }
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 10%;
+}
+
+.first {
+    display: inline-block;
+    background: white;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 55px;
+    margin-top: 5px;
+    border: 2px outset;
+    min-height: 150px;
+    width: 25%;
+    min-width: 210px;
+    max-width: 300px;
+    max-height: 500px;
+}
+
+
+.container1 {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 50px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+    .container1 input {
+        position: absolute;
+        opacity: 0;
+    }
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: rgb(237, 241, 188);
+    border: 1px outset rgb(160, 158, 158);
+    border-radius: 10%;
+}
+
+.container1:hover input ~ .checkmark {
+    background-color: black;
+}
+
+.container1 input:checked ~ .checkmark {
+    background-color: black;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.container1 input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.container1 .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.button3 {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 30px;
+    margin-right: 100px;
+    float: right;
+}

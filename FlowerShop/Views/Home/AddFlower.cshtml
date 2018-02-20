@@ -1,0 +1,25 @@
+﻿@model List<FlowerShop.Models.ViewModel.AddFlowerToCart>
+
+@{ 
+    ViewBag.Title = "AddFlower";
+}
+
+ @foreach (var item in Model)
+     {
+
+        @Html.DisplayFor(m => item.Name)
+        @Html.DisplayFor(m => item.Price, new { id = "price"})
+        @Html.TextBoxFor(m => item.Pieces, new { id = "pieces", @type = "number", min = "1", max = "25" , onchange = "Calculate()" })
+        @Html.DisplayFor(m => item.TotalPrice, new { id = "TotalPrice"})
+        @Html.ActionLink("Delete", "Delete", "Home", item, null)
+
+     }
+
+            
+        @*@Html.DisplayFor(m => m.TotalPrice, new { id = "TotalPrice" })*@
+
+
+
+@Html.ActionLink("FlowerDetails", "FlowerDetails", "Home")
+
+ 
